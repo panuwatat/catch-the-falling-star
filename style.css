@@ -17,14 +17,45 @@ body {
     height: 100vh;
 }
 
-#leaderboard {
+#header {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     padding: 20px;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#all-time-leaderboard, #monthly-leaderboard {
+#country-select {
+    padding: 5px;
+    font-size: 16px;
+}
+
+#play-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+#play-button:hover {
+    background-color: #0056b3;
+}
+
+#main-content {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    padding: 20px;
+    gap: 20px;
+}
+
+.leaderboard {
     width: 20%;
     background-color: #fff;
     padding: 10px;
@@ -32,22 +63,11 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#world-map {
-    width: 50%;
-    text-align: center;
-}
-
-#world-map img {
-    max-width: 100%;
-    height: auto;
-}
-
 #game-area {
     position: relative;
-    width: 80%;
-    height: 60vh;
+    width: 60%;
+    height: 70vh;
     background-color: #fff;
-    margin-top: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -69,8 +89,8 @@ body {
 
 .star {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 60px; /* ขนาดดาวใหญ่ขึ้น 2 เท่า */
+    height: 60px;
     background-image: url('assets/star.png');
     background-size: cover;
     cursor: pointer;
@@ -82,20 +102,4 @@ body {
     background-color: #333;
     color: #fff;
     text-align: center;
-    margin-top: 20px;
-}
-
-#play-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-}
-
-#play-button:hover {
-    background-color: #0056b3;
 }
