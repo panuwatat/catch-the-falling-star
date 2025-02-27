@@ -8,4 +8,4 @@ A simple and fun game where players catch falling stars to score points. Compete
 3. Catch as many stars as you can!
 
 ## Hosting
-This game is hosted on GitHub Pages. You can play it [here](https://your-username.github.io/catch-the-falling-star).
+This game is hosted on GitHub Pages. You can play it [here](https://panuwatat.github.io/catch-the-falling-star).
