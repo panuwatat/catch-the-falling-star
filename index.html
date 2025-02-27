@@ -8,34 +8,42 @@
 </head>
 <body>
     <div id="container">
-        <!-- Leaderboard และแผนที่โลก -->
-        <div id="leaderboard">
-            <div id="all-time-leaderboard">
+        <!-- Header -->
+        <div id="header">
+            <select id="country-select">
+                <option value="thailand">Thailand</option>
+                <option value="usa">USA</option>
+                <option value="japan">Japan</option>
+                <!-- เพิ่มประเทศอื่นๆ ตามต้องการ -->
+            </select>
+            <button id="play-button">Play</button>
+        </div>
+
+        <!-- Leaderboard และพื้นที่เกม -->
+        <div id="main-content">
+            <!-- All-time Leaderboard -->
+            <div id="all-time-leaderboard" class="leaderboard">
                 <h2>All-Time Leaderboard</h2>
                 <ol id="all-time-list"></ol>
             </div>
-            <div id="monthly-leaderboard">
+
+            <!-- พื้นที่เกม -->
+            <div id="game-area">
+                <div id="score-display">Score: 0</div>
+                <div id="stars-container"></div>
+            </div>
+
+            <!-- Monthly Leaderboard -->
+            <div id="monthly-leaderboard" class="leaderboard">
                 <h2>Monthly Leaderboard</h2>
                 <ol id="monthly-list"></ol>
             </div>
-            <div id="world-map">
-                <img src="assets/world-map.png" alt="World Map">
-            </div>
-        </div>
-
-        <!-- พื้นที่เกม -->
-        <div id="game-area">
-            <div id="score-display">Score: 0</div>
-            <div id="stars-container"></div>
         </div>
 
         <!-- โฆษณา -->
         <div id="ad-area">
             <p>Advertisement Space</p>
         </div>
-
-        <!-- ปุ่ม Play -->
-        <button id="play-button">Play</button>
     </div>
 
     <script src="script.js"></script>
