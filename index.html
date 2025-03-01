@@ -11,18 +11,19 @@
     <script>
         // Firebase Config (คัดลอกจาก Firebase Console)
         const firebaseConfig = {
-          apiKey: "AIzaSyBHUWewt5VthZGQKO3vsmdNMon-xSXEr7U",
-          authDomain: "catch-the-falling-star.firebaseapp.com",
-          projectId: "catch-the-falling-star",
-          storageBucket: "catch-the-falling-star.firebasestorage.app",
-          messagingSenderId: "582812448060",
-          appId: "1:582812448060:web:497f19b33fbcd2f8cf1a39",
-          measurementId: "G-665W5C1WV7"
+  apiKey: "AIzaSyBHUWewt5VthZGQKO3vsmdNMon-xSXEr7U",
+  authDomain: "catch-the-falling-star.firebaseapp.com",
+  projectId: "catch-the-falling-star",
+  storageBucket: "catch-the-falling-star.firebasestorage.app",
+  messagingSenderId: "582812448060",
+  appId: "1:582812448060:web:497f19b33fbcd2f8cf1a39",
+  measurementId: "G-665W5C1WV7"
         };
 
         // Initialize Firebase
         const app = firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
+        const analytics = getAnalytics(app);
     </script>
 </head>
 <body>
