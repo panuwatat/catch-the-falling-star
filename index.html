@@ -9,20 +9,27 @@
     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"></script>
     <script>
-        // Firebase Config (คัดลอกจาก Firebase Console)
-        const firebaseConfig = {
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
   apiKey: "AIzaSyBHUWewt5VthZGQKO3vsmdNMon-xSXEr7U",
   authDomain: "catch-the-falling-star.firebaseapp.com",
-  databaseURL: "https://catch-the-falling-star-default-rtdb.asia-southeast1.firebasedatabase.app", // ตรวจสอบ URL นี้ให้ถูกต้อง
   projectId: "catch-the-falling-star",
   storageBucket: "catch-the-falling-star.firebasestorage.app",
   messagingSenderId: "582812448060",
   appId: "1:582812448060:web:497f19b33fbcd2f8cf1a39",
   measurementId: "G-665W5C1WV7"
-        };
+};
 
-        // Initialize Firebase
-        const app = firebase.initializeApp(firebaseConfig);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
         const database = firebase.database();
     </script>
 </head>
