@@ -5,26 +5,31 @@ const scoreDisplay = document.getElementById('score-display');
 const starsContainer = document.getElementById('stars-container');
 const countrySelect = document.getElementById('country-select');
 
-// ข้อมูล Leaderboard (ใช้ Local Storage)
-let allTimeLeaderboard = JSON.parse(localStorage.getItem('allTimeLeaderboard')) || {};
-let monthlyLeaderboard = JSON.parse(localStorage.getItem('monthlyLeaderboard')) || {};
-
 // อัพเดท Leaderboard
 function updateLeaderboard() {
     const allTimeList = document.getElementById('all-time-list');
     const monthlyList = document.getElementById('monthly-list');
 
-    // All-time Leaderboard
-    allTimeList.innerHTML = Object.entries(allTimeLeaderboard)
-        .sort((a, b) => b[1] - a[1])
-        .map(([country, points]) => `<li>${country}: ${points}</li>`)
-        .join('');
+    // อ่านข้อมูล All-time Leaderboard
+    database.ref('/allTimeLeaderboard').once('value').then((snapshot) => {
+        const data = snapshot.val();
+        allTimeList.innerHTML = Object.entries(data || {})
+            .sort((a, b) => b[1] - a[1]) // เรียงจากคะแนนสูงไปต่ำ
+            .slice(0, 20) // แสดงแค่ Top 20
+            .map(([country, points]) => `<li>${country}: ${points}</li>`)
+            .join('');
+    });
 
-    // Monthly Leaderboard
-    monthlyList.innerHTML = Object.entries(monthlyLeaderboard)
-        .sort((a, b) => b[1] - a[1])
-        .map(([country, points]) => `<li>${country}: ${points}</li>`)
-        .join('');
+    // อ่านข้อมูล Monthly Leaderboard
+    const currentMonth = new Date().toISOString().slice(0, 7); // รูปแบบ YYYY-MM
+    database.ref(`/monthlyLeaderboard/${currentMonth}`).once('value').then((snapshot) => {
+        const data = snapshot.val();
+        monthlyList.innerHTML = Object.entries(data || {})
+            .sort((a, b) => b[1] - a[1]) // เรียงจากคะแนนสูงไปต่ำ
+            .slice(0, 20) // แสดงแค่ Top 20
+            .map(([country, points]) => `<li>${country}: ${points}</li>`)
+            .join('');
+    });
 }
 
 // สร้างดาว
@@ -53,10 +58,21 @@ function createStar() {
 }
 
 // เริ่มเกม
+let gameInterval;
 document.getElementById('play-button').addEventListener('click', () => {
+    if (gameInterval) {
+        // ถ้ากด Play อีกครั้ง ให้บันทึกคะแนนและรีเซ็ต
+        saveScore();
+        clearInterval(gameInterval);
+        gameInterval = null;
+    }
+
     score = 0;
     scoreDisplay.innerText = `Score: ${score}`;
-    setInterval(createStar, 1000);
+    starsContainer.innerHTML = ''; // ล้างดาวเก่าทิ้ง
+
+    // เริ่มสร้างดาวทุก 1 วินาที
+    gameInterval = setInterval(createStar, 1000);
 });
 
 // เลือกประเทศ
@@ -64,16 +80,26 @@ countrySelect.addEventListener('change', (e) => {
     selectedCountry = e.target.value;
 });
 
-// บันทึกคะแนนเมื่อเกมจบ (ตัวอย่าง)
+// บันทึกคะแนน
 function saveScore() {
-    allTimeLeaderboard[selectedCountry] = (allTimeLeaderboard[selectedCountry] || 0) + score;
-    monthlyLeaderboard[selectedCountry] = (monthlyLeaderboard[selectedCountry] || 0) + score;
+    const updates = {};
+    const currentMonth = new Date().toISOString().slice(0, 7); // รูปแบบ YYYY-MM
 
-    localStorage.setItem('allTimeLeaderboard', JSON.stringify(allTimeLeaderboard));
-    localStorage.setItem('monthlyLeaderboard', JSON.stringify(monthlyLeaderboard));
+    // อัพเดทคะแนน All-time
+    updates[`/allTimeLeaderboard/${selectedCountry}`] = firebase.database.ServerValue.increment(score);
 
-    updateLeaderboard();
+    // อัพเดทคะแนน Monthly
+    updates[`/monthlyLeaderboard/${currentMonth}/${selectedCountry}`] = firebase.database.ServerValue.increment(score);
+
+    // บันทึกลง Firebase
+    database.ref().update(updates).then(() => {
+        console.log('Score saved successfully!');
+        updateLeaderboard(); // อัพเดท Leaderboard หลังจากบันทึกคะแนน
+    });
 }
 
-// อัพเดท Leaderboard ครั้งแรก
+// อัพเดท Leaderboard ทุก 1 นาที
+setInterval(updateLeaderboard, 60000);
+
+// โหลด Leaderboard ครั้งแรก
 updateLeaderboard();
