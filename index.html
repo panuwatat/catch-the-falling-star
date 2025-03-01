@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catch the Falling Star</title>
     <link rel="stylesheet" href="style.css">
-
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js"></script>
@@ -19,11 +18,12 @@
           messagingSenderId: "582812448060",
           appId: "1:582812448060:web:497f19b33fbcd2f8cf1a39",
           measurementId: "G-665W5C1WV7"
+        };
 
         // Initialize Firebase
         const app = firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
-    </script>    
+    </script>
 </head>
 <body>
     <div id="container">
@@ -33,7 +33,6 @@
                 <option value="thailand">Thailand</option>
                 <option value="usa">USA</option>
                 <option value="japan">Japan</option>
-                <!-- เพิ่มประเทศอื่นๆ ตามต้องการ -->
             </select>
             <button id="play-button">Play</button>
         </div>
