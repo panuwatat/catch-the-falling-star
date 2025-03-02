@@ -12,9 +12,23 @@
     <script>
         // Firebase Config (คัดลอกจาก Firebase Console)
         const firebaseConfig = {
-            apiKey: "AIzaSyBHUWewt5VthZGQKO3vsmdNMon-xSXEr7U",
-            authDomain: "catch-the-falling-star.firebaseapp.com",
-            databaseURL: "https://catch-the-falling-star-default-rtdb.asia-southeast1.firebasedatabase.app",
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Falling Star</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Firebase SDK แบบ compat -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+    <script>
+        // Firebase Config (คัดลอกจาก Firebase Console)
+        const firebaseConfig = {
+  apiKey: "AIzaSyBHUWewt5VthZGQKO3vsmdNMon-xSXEr7U",
+  authDomain: "catch-the-falling-star.firebaseapp.com",
+  databaseURL: "https://catch-the-falling-star-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "catch-the-falling-star",
   storageBucket: "catch-the-falling-star.firebasestorage.app",
   messagingSenderId: "582812448060",
@@ -31,11 +45,62 @@
         <!-- Header -->
         <div id="header">
             <select id="country-select">
+                <option value="" disabled selected>Select Country</option>
                 <option value="thailand">Thailand</option>
                 <option value="usa">USA</option>
                 <option value="japan">Japan</option>
             </select>
-            <button id="play-button">Play</button>
+            <button id="play-button" disabled>Play</button>
+        </div>
+
+        <!-- Leaderboard และพื้นที่เกม -->
+        <div id="main-content">
+            <!-- All-time Leaderboard -->
+            <div id="all-time-leaderboard" class="leaderboard">
+                <h2>All-Time Leaderboard</h2>
+                <ol id="all-time-list"></ol>
+            </div>
+
+            <!-- พื้นที่เกม -->
+            <div id="game-area">
+                <div id="score-display">Score: 0</div>
+                <div id="stars-container"></div>
+            </div>
+
+            <!-- Monthly Leaderboard -->
+            <div id="monthly-leaderboard" class="leaderboard">
+                <h2>Monthly Leaderboard</h2>
+                <ol id="monthly-list"></ol>
+            </div>
+        </div>
+
+        <!-- โฆษณา -->
+        <div id="ad-area">
+            <p>Advertisement Space</p>
+        </div>
+    </div>
+    
+    <!-- โหลด script.js หลังจาก Firebase SDK -->
+    <script src="script.js"></script>
+</body>
+</html>
+        };
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+<body>
+    <div id="container">
+        <!-- Header -->
+        <div id="header">
+            <select id="country-select">
+                <option value="" disabled selected>Select Country</option>
+                <option value="thailand">Thailand</option>
+                <option value="usa">USA</option>
+                <option value="japan">Japan</option>
+            </select>
+            <button id="play-button" disabled>Play</button>
         </div>
 
         <!-- Leaderboard และพื้นที่เกม -->
