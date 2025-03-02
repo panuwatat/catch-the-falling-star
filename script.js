@@ -121,6 +121,11 @@ function saveScore() {
     });
 }
 
+// บันทึกคะแนนเมื่อปิดเบราว์เซอร์
+window.addEventListener('beforeunload', () => {
+    saveScore();
+});
+
 // อัพเดท Leaderboard ทุก 1 นาที
 setInterval(updateLeaderboard, 60000);
 
