@@ -134,3 +134,17 @@ body {
     margin-top: 20px;
     height: 100px; /* เพิ่มความสูงของพื้นที่โฆษณา */
 }
+
+
+.star {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url('assets/star.png');
+    background-size: cover;
+    cursor: pointer;
+    /* เพิ่มพื้นที่คลิกรอบๆ ดาว */
+    padding: 20px;
+    margin: -20px;
+}
+
