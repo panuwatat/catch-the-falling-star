@@ -75,9 +75,21 @@ body {
 
 .leaderboard ol {
     list-style-type: none;
-    padding-left: 20px; /* ขยับข้อความไปทางขวา 2 ตัวอักษร */
+    padding-left: 0; /* ลบ padding ด้านซ้าย */
     flex-grow: 1;
     overflow-y: auto;
+}
+
+.leaderboard li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+}
+
+.leaderboard li img {
+    width: 20px;
+    height: 15px;
 }
 
 #game-area {
