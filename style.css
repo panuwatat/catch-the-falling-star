@@ -148,3 +148,11 @@ body {
     margin: -20px;
 }
 
+/* เพิ่มสไตล์สำหรับชื่อเกมส์ */
+#game-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: auto; /* ดันไปทางซ้าย */
+    padding-left: 20px; /* เว้นระยะจากขอบซ้าย */
+    color: #007bff; /* สีน้ำเงิน */
+}
