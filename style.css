@@ -20,19 +20,32 @@ body {
 
 #header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    width: 100%;
     padding: 20px;
     background-color: #fff;
-    width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* สำหรับ Mobile */
+}
+
+#game-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff; /* สีน้ำเงิน */
+}
+
+#country-select-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 20px; /* เว้นระยะจากขอบ */
 }
 
 #country-select {
     padding: 5px;
     font-size: 16px;
-    width: 200px; /* เพิ่มความยาวเป็น 2 เท่า */
+    width: 200px; /* ความยาวของ Dropdown */
 }
 
 #play-button {
@@ -56,6 +69,7 @@ body {
     flex-grow: 1;
     gap: 20px;
     margin-top: 20px;
+    flex-wrap: wrap; /* สำหรับ Mobile */
 }
 
 .leaderboard {
@@ -75,7 +89,7 @@ body {
 
 .leaderboard ol {
     list-style-type: none;
-    padding-left: 0; /* ลบ padding ด้านซ้าย */
+    padding-left: 20px; /* ขยับข้อความไปทางขวา 2 ตัวอักษร */
     flex-grow: 1;
     overflow-y: auto;
 }
@@ -84,7 +98,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 5px 10px;
+    padding: 5px 0;
 }
 
 .leaderboard li img {
@@ -123,36 +137,44 @@ body {
     background-image: url('assets/star.png');
     background-size: cover;
     cursor: pointer;
-}
-
-#ad-area {
-    width: 100%;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    margin-top: 20px;
-    height: 100px; /* เพิ่มความสูงของพื้นที่โฆษณา */
-}
-
-
-.star {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background-image: url('assets/star.png');
-    background-size: cover;
-    cursor: pointer;
-    /* เพิ่มพื้นที่คลิกรอบๆ ดาว */
     padding: 20px;
     margin: -20px;
 }
 
-/* เพิ่มสไตล์สำหรับชื่อเกมส์ */
-#game-title {
-    font-size: 32px;
-    font-weight: bold;
-    margin-right: auto; /* ดันไปทางซ้าย */
-    padding-left: 20px; /* เว้นระยะจากขอบซ้าย */
-    color: #007bff; /* สีน้ำเงิน */
+#ad-area {
+    width: 100%;
+    padding: 40px; /* เพิ่มความสูงของพื้นที่โฆษณา */
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsive Design สำหรับ Mobile */
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #country-select-container {
+        margin: 10px 0;
+    }
+
+    #main-content {
+        flex-direction: column;
+    }
+
+    .leaderboard, #game-area {
+        width: 100%;
+        height: auto;
+    }
+
+    #game-area {
+        height: 50vh;
+    }
+
+    #ad-area {
+        padding: 20px; /* ปรับความสูงของพื้นที่โฆษณาใน Mobile */
+    }
 }
