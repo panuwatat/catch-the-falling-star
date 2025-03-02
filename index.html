@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catch the Falling Star</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Firebase SDK แบบ UMD -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"></script>
+    
+    <!-- Firebase SDK แบบ compat -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
     <script>
         // Firebase Config (คัดลอกจาก Firebase Console)
         const firebaseConfig = {
-  apiKey: "AIzaSyBHUWewt5VthZGQKO3vsmdNMon-xSXEr7U",
-  authDomain: "catch-the-falling-star.firebaseapp.com",
+            apiKey: "AIzaSyBHUWewt5VthZGQKO3vsmdNMon-xSXEr7U",
+            authDomain: "catch-the-falling-star.firebaseapp.com",
             databaseURL: "https://catch-the-falling-star-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "catch-the-falling-star",
   storageBucket: "catch-the-falling-star.firebasestorage.app",
@@ -20,10 +21,9 @@
   appId: "1:582812448060:web:497f19b33fbcd2f8cf1a39",
   measurementId: "G-665W5C1WV7"
         };
-
+        
         // Initialize Firebase
-        const app = firebase.initializeApp(firebaseConfig);
-        const database = firebase.database();
+        firebase.initializeApp(firebaseConfig);
     </script>
 </head>
 <body>
@@ -64,7 +64,8 @@
             <p>Advertisement Space</p>
         </div>
     </div>
-
+    
+    <!-- โหลด script.js หลังจาก Firebase SDK -->
     <script src="script.js"></script>
 </body>
 </html>
