@@ -10,6 +10,7 @@
     <!-- Firebase SDK แบบ compat -->
     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js"></script>
     <script type="module" src="script.js"></script> <!-- เปลี่ยนเป็น type="module" -->
     <script>
         // Firebase Config (คัดลอกจาก Firebase Console)
@@ -25,8 +26,12 @@
         };
         
         // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
+       // firebase.initializeApp(firebaseConfig);
       //  firebase.getAnalytics(app);
+
+    const app = firebase.initializeApp(firebaseConfig);
+    const analytics = firebase.analytics(); // Initialize Analytics
+    
     </script>
 </head>
 <body>
