@@ -142,14 +142,15 @@ body {
     margin: -20px;
 }
 
-#ad-area {
-    width: 100%;
-    padding: 0px; /* เพิ่มความสูงของพื้นที่โฆษณา 40px */
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    margin-top: 20px;
-}
+// #ad-area {
+//    width: 100%;
+//    padding: 40px; /* เพิ่มความสูงของพื้นที่โฆษณา 40px */
+//    background-color: #333;
+//    color: #fff;
+//    text-align: center;
+//    margin-top: 20px;
+//}
+
 
 /* Responsive Design สำหรับ Mobile */
 @media (max-width: 768px) {
