@@ -109,7 +109,7 @@ body {
 
 #game-area {
     position: relative;
-    width: 50%; /* ลดความกว้างของพื้นที่เกมเหลือ 2/3 */
+    width: 55%; /* ลดความกว้างของพื้นที่เกมเหลือ 2/3 */
     height: 70vh;
     background-color: #fff;
     border-radius: 8px;
@@ -144,7 +144,7 @@ body {
 
 #ad-area {
     width: 100%;
-    padding: 40px; /* เพิ่มความสูงของพื้นที่โฆษณา */
+    padding: 0px; /* เพิ่มความสูงของพื้นที่โฆษณา 40px */
     background-color: #333;
     color: #fff;
     text-align: center;
