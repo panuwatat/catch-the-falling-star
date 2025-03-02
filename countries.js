@@ -150,7 +150,7 @@ const countries = [
     { code: "Samoa", name: "Samoa", flag: "assets/flags/Flag_of_Samoa.png" },
     { code: "San Marino", name: "San Marino", flag: "assets/flags/Flag_of_San_Marino.png" },
     { code: "Saudi Arabia", name: "Saudi Arabia", flag: "assets/flags/Flag_of_Saudi_Arabia.png" },
-    { code: "São Tomé and Príncipe", name: "São Tomé and Príncipe", flag: "assets/flags/Flag_of_São_Tomé_and_Príncipe.png" }
+    { code: "São Tomé and Príncipe", name: "São Tomé and Príncipe", flag: "assets/flags/Flag_of_São_Tomé_and_Príncipe.png" },
     { code: "Senegal", name: "Senegal", flag: "assets/flags/Flag_of_Senegal.png" },
     { code: "Serbia", name: "Serbia", flag: "assets/flags/Flag_of_Serbia.png" },
     { code: "Seychelles", name: "Seychelles", flag: "assets/flags/Flag_of_Seychelles.png" },
@@ -166,7 +166,7 @@ const countries = [
     { code: "Spain", name: "Spain", flag: "assets/flags/Flag_of_Spain.png" },
     { code: "Sri Lanka", name: "Sri Lanka", flag: "assets/flags/Flag_of_Sri_Lanka.png" },
     { code: "Sudan", name: "Sudan", flag: "assets/flags/Flag_of_Sudan.png" },
-    { code: "Suriname", name: "Suriname", flag: "assets/flags/Flag_of_Suriname.png" }
+    { code: "Suriname", name: "Suriname", flag: "assets/flags/Flag_of_Suriname.png" },
     { code: "Sweden", name: "Sweden", flag: "assets/flags/Flag_of_Sweden.png" },
     { code: "Switzerland", name: "Switzerland", flag: "assets/flags/Flag_of_Switzerland.png" },
     { code: "Syria", name: "Syria", flag: "assets/flags/Flag_of_Syria.png" },
