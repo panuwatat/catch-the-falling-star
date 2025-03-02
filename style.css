@@ -184,8 +184,8 @@ body {
 
 /* เพิ่มสไตล์สำหรับเนื้อหา SEO-Friendly */
 #seo-content {
-    margin-top: 40px; /* ระยะห่างจากพื้นที่เล่นเกม */
-    margin-bottom: 40px; /* ระยะห่างจากส่วนอื่นๆ */
+    margin-top: 60px; /* ระยะห่างจากพื้นที่เล่นเกม */
+    margin-bottom: 60px; /* ระยะห่างจากส่วนอื่นๆ */
     padding: 20px;
     background-color: #f9f9f9; /* สีพื้นหลัง */
     border-radius: 8px;
@@ -193,35 +193,20 @@ body {
 }
 
 #seo-content h1 {
-    font-size: 24px; /* ปรับขนาดตัวหนังสือ */
-    margin-bottom: 20px; /* ระยะห่างด้านล่าง */
+    font-size: 18px; /* ปรับขนาดตัวหนังสือ */
+    margin-bottom: 15px; /* ระยะห่างด้านล่าง */
 }
 
 #seo-content h2 {
-    font-size: 20px; /* ปรับขนาดตัวหนังสือ */
-    margin-top: 30px; /* ระยะห่างด้านบน */
+    font-size: 18px; /* ปรับขนาดตัวหนังสือ */
+    margin-top: 50px; /* ระยะห่างด้านบน */
     margin-bottom: 15px; /* ระยะห่างด้านล่าง */
 }
 
 #seo-content p {
-    font-size: 16px; /* ปรับขนาดตัวหนังสือ */
+    font-size: 14px; /* ปรับขนาดตัวหนังสือ */
     line-height: 1.6; /* ระยะห่างระหว่างบรรทัด */
-    margin-bottom: 15px; /* ระยะห่างด้านล่าง */
+    margin-bottom: 30px; /* ระยะห่างด้านล่าง */
 }
 
-/* สไตล์สำหรับปุ่มซ่อน/แสดงเนื้อหา */
-#toggle-seo-content {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-}
 
-#toggle-seo-content:hover {
-    background-color: #0056b3;
-}
