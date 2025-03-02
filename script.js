@@ -1,3 +1,5 @@
+import countries from './countries.js';
+
 // ตัวแปรเก็บคะแนนและประเทศ
 let score = 0;
 let selectedCountry = '';
@@ -15,6 +17,14 @@ if (typeof firebase !== 'undefined' && typeof firebase.database === 'function') 
     console.error("Firebase SDK โหลดไม่ถูกต้อง");
 }
 
+// เติมรายชื่อประเทศใน dropdown
+countries.forEach(country => {
+    const option = document.createElement('option');
+    option.value = country.code;
+    option.textContent = country.name;
+    countrySelect.appendChild(option);
+});
+
 // เลือกประเทศ
 countrySelect.addEventListener('change', (e) => {
     selectedCountry = e.target.value;
@@ -31,7 +41,13 @@ function updateLeaderboard() {
         allTimeList.innerHTML = Object.entries(data || {})
             .sort((a, b) => b[1] - a[1])
             .slice(0, 20)
-            .map(([country, points]) => `<li>${country}: ${points}</li>`)
+            .map(([country, points], index) => `
+                <li>
+                    <span>${index + 1}.</span>
+                    <img src="${countries.find(c => c.code === country)?.flag || 'flags/default.png'}" alt="${country}">
+                    <span>${country}: ${points}</span>
+                </li>
+            `)
             .join('');
     });
 
@@ -42,7 +58,13 @@ function updateLeaderboard() {
         monthlyList.innerHTML = Object.entries(data || {})
             .sort((a, b) => b[1] - a[1])
             .slice(0, 20)
-            .map(([country, points]) => `<li>${country}: ${points}</li>`)
+            .map(([country, points], index) => `
+                <li>
+                    <span>${index + 1}.</span>
+                    <img src="${countries.find(c => c.code === country)?.flag || 'flags/default.png'}" alt="${country}">
+                    <span>${country}: ${points}</span>
+                </li>
+            `)
             .join('');
     });
 }
