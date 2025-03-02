@@ -1,6 +1,6 @@
 // ตัวแปรเก็บคะแนนและประเทศ
 let score = 0;
-let selectedCountry = 'thailand';
+let selectedCountry = '';
 const scoreDisplay = document.getElementById('score-display');
 const starsContainer = document.getElementById('stars-container');
 const countrySelect = document.getElementById('country-select');
@@ -14,6 +14,12 @@ if (typeof firebase !== 'undefined' && typeof firebase.database === 'function') 
 } else {
     console.error("Firebase SDK โหลดไม่ถูกต้อง");
 }
+
+// เลือกประเทศ
+countrySelect.addEventListener('change', (e) => {
+    selectedCountry = e.target.value;
+    playButton.disabled = !selectedCountry; // เปิดปุ่ม Play เมื่อเลือกประเทศ
+});
 
 // อัพเดท Leaderboard
 function updateLeaderboard() {
@@ -78,11 +84,6 @@ playButton.addEventListener('click', () => {
     scoreDisplay.innerText = `Score: ${score}`;
     starsContainer.innerHTML = '';
     gameInterval = setInterval(createStar, 1000);
-});
-
-// เลือกประเทศ
-countrySelect.addEventListener('change', (e) => {
-    selectedCountry = e.target.value;
 });
 
 // บันทึกคะแนน
