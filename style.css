@@ -143,6 +143,7 @@ body {
 }
 
 #ad-area {
+    display: none; /* ซ่อนพื้นที่โฆษณา   หากให้แสดง เปลี่ยนเป็น block*/  
     width: 100%;
     padding: 40px; /* เพิ่มความสูงของพื้นที่โฆษณา 40px */
     background-color: #333;
