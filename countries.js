@@ -169,6 +169,7 @@ const countries = [
     { code: "Sweden", name: "Sweden", flag: "assets/flags/Flag_of_Sweden.png" },
     { code: "Switzerland", name: "Switzerland", flag: "assets/flags/Flag_of_Switzerland.png" },
     { code: "Syria", name: "Syria", flag: "assets/flags/Flag_of_Syria.png" },
+    { code: "Taiwan", name: "Taiwan", flag: "assets/flags/Flag_of_Taiwan.png" },
     { code: "Tajikistan", name: "Tajikistan", flag: "assets/flags/Flag_of_Tajikistan.png" },
     { code: "Tanzania", name: "Tanzania", flag: "assets/flags/Flag_of_Tanzania.png" },
     { code: "Thailand", name: "Thailand", flag: "assets/flags/Flag_of_Thailand.png" },
